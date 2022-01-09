@@ -2,7 +2,24 @@
 
 - ysoserial的rust实现
 - 去特征，比原版体积小一半
+## examples
+```shell
+cargo run --example examples
+```
+- 详细请看examples目录
+```rust
+use std::fs::File;
+use std::io;
+use std::io::Write;
+use ysoserial_rs::get_commons_beanutils1;
 
+fn main() -> Result<(), io::Error> {
+    let mut file = File::create("commons_beanutils1.ser")?;
+    file.write_all(&get_commons_beanutils1("id"))?;
+    Ok(())
+}
+
+```
 ## 支持列表
 
 | Gadget              | Support |
