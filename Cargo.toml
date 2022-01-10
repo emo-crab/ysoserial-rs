@@ -1,10 +1,39 @@
 [package]
-name = "ysoserial_rs"
+name = "ysoserial"
+authors = ["Kali-Team <root@kali-team.cn>"]
 version = "0.1.0"
-edition = "2021"
-
+edition = "2018"
+description = "Ysoserial pure Rust implementation."
+license = "MIT"
+include = ["LICENSE", "Cargo.toml", "src/**/*.rs"]
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[workspace]
+members = [".", "ysoserial_rs"]
+[profile.release.package.ysoserial_rs]
+
+opt-level = "z"
+codegen-units = 1
+
+[profile.release]
+lto = true
+opt-level = "z"
+codegen-units = 1
+panic = "abort"
+
+[profile.dev.package."*"]
+opt-level = 3
+
+[profile.test]
+opt-level = 3
+lto = "thin"
+
+[profile.bench]
+lto = true
+codegen-units = 1
+opt-level = 3
 
 [dependencies]
-rand = "0.8.4"
-url = "2.2.2"
+clap = { version = "3.0.5", features = ["derive"] }
+hex = "0.4.3"
+base64 = "0.13.0"
+ysoserial_rs = { path = "ysoserial_rs", package = "ysoserial_rs" }
