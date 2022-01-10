@@ -41,6 +41,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
             ("myfaces1", get_myfaces1),
             ("rome", get_rome),
             ("spring1", get_spring1),
+            ("spring2", get_spring2),
             ("vaadin1", get_vaadin1),
         ]);
     let url_payload_map: HashMap<&str, fn(&str) -> Vec<u8>, RandomState> = HashMap::from_iter([

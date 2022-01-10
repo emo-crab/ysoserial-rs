@@ -101,6 +101,7 @@ fn main() -> Result<(), io::Error> {
 - [x] myfaces1
 - [x] rome
 - [x] spring1
+- [x] spring2
 - [x] cck1_tomcat_echo
 - [x] cck2_tomcat_echo
 - [x] url_dns
