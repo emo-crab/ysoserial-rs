@@ -108,6 +108,8 @@ fn main() -> Result<(), io::Error> {
 - [x] c3p0
 - [x] vaadin1
 
+- [x] shiro_spc
+
 ## 感谢
 
 - 灵感：[Gososerial](https://github.com/EmYiQing/Gososerial)

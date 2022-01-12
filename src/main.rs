@@ -48,6 +48,10 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         ("url_dns", get_url_dns as fn(&str) -> Vec<u8>),
         ("c3p0", get_c3p0 as fn(&str) -> Vec<u8>),
     ]);
+    let shiro_payload_map: HashMap<&str, fn() -> Vec<u8>, RandomState> = HashMap::from_iter([(
+        "shiro_spc",
+        get_shiro_simple_principal_collection as fn() -> Vec<u8>,
+    )]);
     let header_payload_map: HashMap<&str, fn(&str, &str) -> Vec<u8>, RandomState> =
         HashMap::from_iter([
             (
@@ -77,6 +81,12 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                 .map(|x| x.to_string())
                 .collect::<Vec<String>>(),
         );
+        all_payload.extend(
+            shiro_payload_map
+                .keys()
+                .map(|x| x.to_string())
+                .collect::<Vec<String>>(),
+        );
         all_payload.sort();
         for p in all_payload {
             println!("{}", p);
@@ -89,6 +99,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         payload = url_func(&config.url);
     } else if let Some(header_func) = header_payload_map.get(&config.payload as &str) {
         payload = header_func(&config.header_name, &config.command);
+    } else if let Some(shiro_func) = shiro_payload_map.get(&config.payload as &str) {
+        payload = shiro_func();
     } else {
         println!("暂时不支持该Payload")
     }
