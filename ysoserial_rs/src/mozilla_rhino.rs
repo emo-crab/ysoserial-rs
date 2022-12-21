@@ -135,7 +135,7 @@ pub fn get_mozilla_rhino1(cmd: &str) -> Vec<u8> {
         116, 0, 14, 110, 101, 119, 84, 114, 97, 110, 115, 102, 111, 114, 109, 101, 114, 118, 113,
         0, 126, 1, 155, 119, 2, 0, 0, 120, 112, 120, 119, 4, 0, 0, 0, 0, 120,
     ]);
-    return result_bytes;
+    result_bytes
 }
 pub fn get_mozilla_rhino2(cmd: &str) -> Vec<u8> {
     let mut result_bytes = [
@@ -224,5 +224,5 @@ pub fn get_mozilla_rhino2(cmd: &str) -> Vec<u8> {
         112, 116, 0, 4, 68, 111, 103, 101, 112, 119, 1, 0, 120, 112, 120, 0, 0, 0, 0, 112, 112,
         112, 120,
     ]);
-    return result_bytes;
+    result_bytes
 }

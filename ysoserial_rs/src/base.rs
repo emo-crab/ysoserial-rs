@@ -4,5 +4,5 @@ pub fn generate_string(string: &str) -> Vec<u8> {
     let byte_len = string.len() as u16;
     result_bytes.extend(byte_len.to_be_bytes());
     result_bytes.extend(string.as_bytes());
-    return result_bytes;
+    result_bytes
 }

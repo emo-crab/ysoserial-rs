@@ -33,7 +33,7 @@ codegen-units = 1
 opt-level = 3
 
 [dependencies]
-clap = { version = "3.0.5", features = ["derive"] }
+argh = "0.1.8"
 hex = "0.4.3"
 base64 = "0.13.0"
 ysoserial_rs = { path = "ysoserial_rs", package = "ysoserial_rs" }

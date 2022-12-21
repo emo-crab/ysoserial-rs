@@ -162,5 +162,5 @@ pub fn get_json1(cmd: &str) -> Vec<u8> {
         126, 0, 5, 115, 113, 0, 126, 0, 2, 113, 0, 126, 0, 7, 113, 0, 126, 0, 75, 113, 0, 126, 0,
         82, 120,
     ]);
-    return result_bytes;
+    result_bytes
 }

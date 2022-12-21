@@ -38,7 +38,7 @@ pub fn get_f_template_impl(cmd: &str) -> Vec<u8> {
         3, 0, 1, 3, 0, 1, 0, 25, 0, 8, 0, 1, 0, 9, 0, 0, 0, 17, 0, 1, 0, 1, 0, 0, 0, 5, 42, 183, 0,
         27, 177, 0, 0, 0, 0, 0, 1, 0, 5, 0, 0, 0, 2, 0, 6,
     ]);
-    return f_template;
+    f_template
 }
 
 pub fn get_k_template_impl(cmd: &str) -> Vec<u8> {
@@ -79,5 +79,5 @@ pub fn get_k_template_impl(cmd: &str) -> Vec<u8> {
         3, 0, 1, 3, 0, 1, 0, 25, 0, 8, 0, 1, 0, 9, 0, 0, 0, 17, 0, 1, 0, 1, 0, 0, 0, 5, 42, 183, 0,
         27, 177, 0, 0, 0, 0, 0, 1, 0, 5, 0, 0, 0, 2, 0, 6,
     ]);
-    return k_template;
+    k_template
 }

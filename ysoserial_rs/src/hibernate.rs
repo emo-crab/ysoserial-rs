@@ -104,7 +104,7 @@ pub fn get_hibernate1(cmd: &str) -> Vec<u8> {
         112, 116, 0, 4, 68, 111, 103, 101, 112, 119, 1, 0, 120, 113, 0, 126, 0, 5, 115, 113, 0,
         126, 0, 2, 113, 0, 126, 0, 17, 113, 0, 126, 0, 41, 113, 0, 126, 0, 47, 120,
     ]);
-    return result_bytes;
+    result_bytes
 }
 pub fn get_hibernate2(cmd: &str) -> Vec<u8> {
     let mut result_bytes = [
@@ -225,7 +225,7 @@ pub fn get_hibernate2(cmd: &str) -> Vec<u8> {
         112, 112,
     ]
     .to_vec();
-    result_bytes.extend(generate_string(&cmd));
+    result_bytes.extend(generate_string(cmd));
     result_bytes.extend([
         115, 114, 0, 16, 106, 97, 118, 97, 46, 117, 116, 105, 108, 46, 86, 101, 99, 116, 111, 114,
         217, 151, 125, 91, 128, 59, 175, 1, 3, 0, 3, 73, 0, 17, 99, 97, 112, 97, 99, 105, 116, 121,
@@ -250,5 +250,5 @@ pub fn get_hibernate2(cmd: &str) -> Vec<u8> {
         112, 112, 112, 112, 112, 112, 112, 120, 113, 0, 126, 0, 5, 115, 113, 0, 126, 0, 2, 113, 0,
         126, 0, 17, 113, 0, 126, 0, 49, 113, 0, 126, 0, 65, 120,
     ]);
-    return result_bytes;
+    result_bytes
 }
