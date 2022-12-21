@@ -90,19 +90,20 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
         }
         process::exit(0);
     }
-    if let Some(command_func) = command_payload_map.get(&config.payload as &str) {
+    let p = &config.payload.unwrap_or_default();
+    if let Some(command_func) = command_payload_map.get(p as &str) {
         payload = command_func(&config.command.unwrap_or_default());
-    } else if let Some(url_func) = url_payload_map.get(&config.payload as &str) {
+    } else if let Some(url_func) = url_payload_map.get(p as &str) {
         payload = url_func(&config.url.unwrap_or_default());
-    } else if let Some(header_func) = header_payload_map.get(&config.payload as &str) {
+    } else if let Some(header_func) = header_payload_map.get(p as &str) {
         payload = header_func(
             &config.echo_name.unwrap_or_default(),
             &config.command_name.unwrap_or_default(),
         );
-    } else if let Some(shiro_func) = shiro_payload_map.get(&config.payload as &str) {
+    } else if let Some(shiro_func) = shiro_payload_map.get(p as &str) {
         payload = shiro_func();
     } else {
-        println!("暂时不支持该Payload")
+        println!("请制定Payload")
     }
     match config.format.as_str() {
         "hex" => {

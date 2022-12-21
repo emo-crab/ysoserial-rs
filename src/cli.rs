@@ -5,7 +5,7 @@ use argh::FromArgs;
 pub struct ConfigArgs {
     /// select a payload
     #[argh(option, short = 'p')]
-    pub payload: String,
+    pub payload: Option<String>,
     /// command to execute
     #[argh(option, short = 'c')]
     pub command: Option<String>,
