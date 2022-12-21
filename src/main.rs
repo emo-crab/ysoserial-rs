@@ -92,18 +92,27 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
     let p = &config.payload.unwrap_or_default();
     if let Some(command_func) = command_payload_map.get(p as &str) {
-        payload = command_func(&config.command.unwrap_or_default());
+        if let Some(cmd) = &config.command {
+            payload = command_func(cmd);
+        } else {
+            println!("该Payload需要指定执行的命令行")
+        }
     } else if let Some(url_func) = url_payload_map.get(p as &str) {
-        payload = url_func(&config.url.unwrap_or_default());
+        if let Some(u) = &config.url {
+            payload = url_func(u);
+        } else {
+            println!("该Payload需要指定URL")
+        }
     } else if let Some(header_func) = header_payload_map.get(p as &str) {
-        payload = header_func(
-            &config.echo_name.unwrap_or_default(),
-            &config.command_name.unwrap_or_default(),
-        );
+        if let (Some(echo_name), Some(command_name)) = (&config.echo_name, &config.command_name) {
+            payload = header_func(echo_name, command_name);
+        } else {
+            println!("该Payload需要指定回显请求头和命令请求头")
+        }
     } else if let Some(shiro_func) = shiro_payload_map.get(p as &str) {
         payload = shiro_func();
     } else {
-        println!("请制定Payload")
+        println!("请指定Payload")
     }
     match config.format.as_str() {
         "hex" => {

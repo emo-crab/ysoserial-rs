@@ -6,22 +6,20 @@
 ## using
 
 ```shell
-ysoserial_rs 0.0.1
-author: Kali-Team
+Usage: ysoserial [-p <payload>] [-c <command>] [--url <url>] [--echo-name <echo-name>] [--command-name <command-name>] [-o <output>] [-f <format>] [-l]
 
-USAGE:
-    ysoserial [OPTIONS]
+ysoserial_rs
 
-OPTIONS:
-    -c, --command <COMMAND>                 Command to execute
-    -f, --format <FORMAT>                   Format to Hex or Base64 [possible values: hex, base64]
-    -h, --help                              Print help information
-        --header_name <ECHO HEADER NAME>    Tomcat echo request header name
-    -l, --list                              List all payload
-    -o, --output <OUTPUT>                   Save payload to file
-    -p, --payload <PAYLOAD>                 Select a payload
-        --url <URL>                         URL to request DNS
-    -V, --version                           Print version information
+Options:
+  -p, --payload     select a payload
+  -c, --command     command to execute
+  --url             url to request dns
+  --echo-name       tomcat echo request header name
+  --command-name    tomcat command request header name
+  -o, --output      save payload to file
+  -f, --format      format to hex or base64
+  -l, --list        list all payload
+  --help            display usage information
 
 ```
 
