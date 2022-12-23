@@ -1,7 +1,8 @@
 # ysoserial_rs
 
-- ysoserial的rust实现
-- 去特征，比原版体积小一半
+- [ysoserial](https://github.com/frohoff/ysoserial)  implemented by rust
+
+> A proof-of-concept tool for generating payloads that exploit unsafe Java object deserialization.
 
 ## using
 
@@ -56,7 +57,7 @@ aced00057372003273756e2e7265666c6563742e616e6e6f746174696f6e
 cargo run --example examples
 ```
 
-- 详细请看examples目录
+- Please refer to the examples directory for details
 
 ```rust
 use std::fs::File;
@@ -71,7 +72,7 @@ fn main() -> Result<(), io::Error> {
 }
 ```
 
-## 支持列表
+## support list
 
 - [x] bs1
 - [x] cc1
