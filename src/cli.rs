@@ -1,7 +1,7 @@
 use argh::FromArgs;
 
 #[derive(Debug, Clone, FromArgs, Default)]
-#[argh(description = "ysoserial_rs")]
+#[argh(description = "ysoserial-rs")]
 pub struct ConfigArgs {
     /// select a payload
     #[argh(option, short = 'p')]

